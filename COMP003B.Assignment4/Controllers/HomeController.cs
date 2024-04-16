@@ -38,7 +38,7 @@ namespace COMP003B.Assignment4.Controllers
             if (ModelState.IsValid)
             {
                 // if all data is valid, it redirects to the ThankYou page
-                return View("ThankYou", model); // changed from RedirectToAction to View (maybe keep?)
+                return View("ThankYou", model); 
             }
 
             // if data is not valid, it returns to the Register page so that it can be reattempted
