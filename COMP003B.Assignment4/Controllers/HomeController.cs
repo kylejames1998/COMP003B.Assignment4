@@ -31,7 +31,8 @@ namespace COMP003B.Assignment4.Controllers
         }
 
         // POST: Home/Register
-        [HttpPost, ValidateAntiForgeryToken]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Register(RegistrationViewModel model)
         {
             if (ModelState.IsValid)
@@ -45,6 +46,7 @@ namespace COMP003B.Assignment4.Controllers
         }
 
         // GET: Home/ThankYou
+        [HttpGet]
         public IActionResult ThankYou(RegistrationViewModel model)
         {
             return View(model);
