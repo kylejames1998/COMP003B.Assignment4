@@ -23,6 +23,25 @@ namespace COMP003B.Assignment4.Controllers
             return View();
         }
 
+        // GET: Home/Register
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        // POST: Home/Register
+        [HttpPost, ValidateAntiForgeryToken]
+        public IActionResult Confirmation(RegistrationViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("Register", model);
+            }
+
+            return View(model);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
