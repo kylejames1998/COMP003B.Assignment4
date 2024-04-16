@@ -1,0 +1,40 @@
+﻿@model RegistrationViewModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Register</h1>
+
+<!-- TODO: add form with the appropriate tag helpers and values -->
+<!-- TODO: the asp-action value triggers the action method in the controller -->
+<form asp-action="Confirmation" asp-controller="Home" method="post">
+    <!-- TODO: add each field in a form-group div -->
+    <div class="form-group">
+        <!-- TODO: add the label and tag helpers -->
+        <label asp-for="Name"></label>
+        <!-- TODO: add the form input and tag helpers -->
+        <input asp-for="Name" class="form-control" />
+        <!-- TODO: add validation using tag helpers -->
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Phone"></label>
+        <input asp-for="Phone" class="form-control" />
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Address"></label>
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+    <br />
+
+    <!-- TODO: add submit button -->
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
