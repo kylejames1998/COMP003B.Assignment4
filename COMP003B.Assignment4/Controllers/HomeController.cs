@@ -30,7 +30,7 @@ namespace COMP003B.Assignment4.Controllers
             return View("Register");
         }
 
-        // POST: Home/Register
+        // POST: Home/ThankYou
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult ThankYou(RegistrationViewModel model)
