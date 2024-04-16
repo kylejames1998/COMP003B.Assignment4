@@ -27,7 +27,7 @@ namespace COMP003B.Assignment4.Controllers
         [HttpGet]
         public IActionResult Register()
         {
-            return View();
+            return View("Register");
         }
 
         // POST: Home/Register
@@ -40,6 +40,7 @@ namespace COMP003B.Assignment4.Controllers
                 return RedirectToAction("ThankYou", model);
             }
 
+            // if data is not valid, it returns to the Register page so that it can be reattempted
             return View("Register", model);
         }
 
