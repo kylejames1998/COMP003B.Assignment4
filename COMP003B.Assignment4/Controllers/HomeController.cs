@@ -33,24 +33,18 @@ namespace COMP003B.Assignment4.Controllers
         // POST: Home/Register
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Register(RegistrationViewModel model)
+        public IActionResult ThankYou(RegistrationViewModel model)
         {
             if (ModelState.IsValid)
             {
                 // if all data is valid, it redirects to the ThankYou page
-                return RedirectToAction("ThankYou", model);
+                return View("ThankYou", model); // changed from RedirectToAction to View (maybe keep?)
             }
 
             // if data is not valid, it returns to the Register page so that it can be reattempted
             return View("Register", model);
         }
 
-        // GET: Home/ThankYou
-        [HttpGet]
-        public IActionResult ThankYou(RegistrationViewModel model)
-        {
-            return View(model);
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
