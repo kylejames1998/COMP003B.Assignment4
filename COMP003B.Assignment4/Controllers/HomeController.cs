@@ -36,6 +36,7 @@ namespace COMP003B.Assignment4.Controllers
         {
             if (ModelState.IsValid)
             {
+                // if all data is valid, it redirects to the ThankYou page
                 return RedirectToAction("ThankYou", model);
             }
 
